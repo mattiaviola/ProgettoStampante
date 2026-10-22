@@ -71,9 +71,9 @@ public class Stampante {
 		double blu = 0;
 		
 		for(int i = 0; i < imm.getForme().length; i++) {
-			rosso += ( imm.getForme()[i].getColore().R / 255 ) * 10;
-			verde += ( imm.getForme()[i].getColore().G / 255 ) * 10;
-			blu += ( imm.getForme()[i].getColore().B / 255 ) * 10;
+			rosso += ( imm.getForme()[i].getColore().getR() / 255.0 ) * 10;
+			verde += ( imm.getForme()[i].getColore().getG() / 255.0 ) * 10;
+			blu += ( imm.getForme()[i].getColore().getB() / 255.0 ) * 10;
 		}
 		
 		if(this.cartucciaR >= rosso && this.cartucciaG >= verde && this.cartucciaB >= blu) {

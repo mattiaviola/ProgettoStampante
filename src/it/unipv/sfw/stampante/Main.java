@@ -15,8 +15,8 @@ public class Main {
 		Forme f3 = new Cerchio(5, c3);
 		Forme[] fvett1 = {f1, f2, f3};
 		
-		ImgVett i1 = new ImgVett(3);
-		i1.setForme(fvett1);
+		ImgVett i1 = new ImgVett(fvett1,3);
+		//i1.setForme(fvett1);
 		
 		Stampante s = new Stampante();
 		
@@ -33,6 +33,8 @@ public class Main {
 		System.out.println(s.stampaImmagine(i1));
 		System.out.println(s.stampaImmagine(i1));
 		System.out.println(s.stampaImmagine(i1));
+		
+		System.out.println(s.inchiostroResiduo());
 		
 	}
 

@@ -5,8 +5,9 @@ public class ImgVett {
 	private Forme[] forme;
 	private int maxforme;
 	
-	public ImgVett(int maxforme) {
+	public ImgVett(Forme[] forme,int maxforme) {
 		this.forme = new Forme[maxforme];
+		this.forme = forme;
 	}
 
 	public int getMaxforme() {
@@ -23,6 +24,7 @@ public class ImgVett {
 
 	public void setForme(Forme[] forme) {
 		this.forme = forme;
+		this.maxforme = forme.length;
 	}
 	
 }
