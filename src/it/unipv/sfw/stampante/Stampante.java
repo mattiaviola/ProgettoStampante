@@ -5,11 +5,16 @@ public class Stampante {
 	private double cartucciaR;
 	private double cartucciaG;
 	private double cartucciaB;
+	public final double MAX_INCHIOSTRO = 100;
 	
 	public Stampante() {
-		cartucciaR = 100;
-		cartucciaG = 100;
-		cartucciaB = 100;
+		inizializzaCartucce();
+	}
+	
+	public void inizializzaCartucce() {
+		cartucciaR = MAX_INCHIOSTRO;
+		cartucciaG = MAX_INCHIOSTRO;
+		cartucciaB = MAX_INCHIOSTRO;
 	}
 
 	public double getCartucciaR() {
@@ -59,30 +64,24 @@ public class Stampante {
 				break;
 		}
 		if(done) {
-			return "Sostituzione effettuata con successo.";
+			return "Sostituzione cartuccia di colore " + c + " effettuata con successo.";
 		}else {
 			return "Errore nella sostituzione.";
 		}
 	}
 	
-	public String stampaImmagine(ImgVett imm) {
-		double rosso = 0;
-		double verde = 0;
-		double blu = 0;
+	public String stampaImmagine(Immagine imm) {
+		double rosso = imm.getConsumoR();
+		double verde = imm.getConsumoG();
+		double blu = imm.getConsumoB();
 		
-		for(int i = 0; i < imm.getForme().length; i++) {
-			rosso += ( imm.getForme()[i].getColore().getR() / 255.0 ) * 10;
-			verde += ( imm.getForme()[i].getColore().getG() / 255.0 ) * 10;
-			blu += ( imm.getForme()[i].getColore().getB() / 255.0 ) * 10;
-		}
-		
-		if(this.cartucciaR >= rosso && this.cartucciaG >= verde && this.cartucciaB >= blu) {
+		if(cartucciaR >= rosso && cartucciaG >= verde && cartucciaB >= blu) {
 			cartucciaR -= rosso;
 			cartucciaG -= verde;
 			cartucciaB -= blu;
-			return "Stampa effettuata con successo";
-		}else {
-			return "Errore nella stampa";
+			return "Stampa effettuata con successo.";
+		} else {
+			return "Errore: Inchiostro insufficiente per completare la stampa.";
 		}
 	}
 	

@@ -3,7 +3,7 @@ package it.unipv.sfw.stampante;
 public class RGBColor {
 	
 	private int R, G, B;
-	public final int MAXCOL = 255;
+	public final int MAXCOL = 256;
 	
 	public RGBColor(int r, int g, int b) {
 		this.R = r % MAXCOL;
