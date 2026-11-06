@@ -70,10 +70,10 @@ public class Stampante {
 		}
 	}
 	
-	public String stampaImmagine(Immagine imm) {
-		double rosso = imm.getConsumoR();
-		double verde = imm.getConsumoG();
-		double blu = imm.getConsumoB();
+	public String stampaImmagine(Stampabile s) {
+		double rosso = s.getConsumoR();
+		double verde = s.getConsumoG();
+		double blu = s.getConsumoB();
 		
 		if(cartucciaR >= rosso && cartucciaG >= verde && cartucciaB >= blu) {
 			cartucciaR -= rosso;

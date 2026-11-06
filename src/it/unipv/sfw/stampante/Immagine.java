@@ -1,6 +1,6 @@
 package it.unipv.sfw.stampante;
 
-public abstract class Immagine implements Comparable<Immagine> {
+public abstract class Immagine implements Comparable<Immagine>, Stampabile {
 	public abstract double getAreaTotale();
 	public abstract double getConsumoR();
 	public abstract double getConsumoG();
